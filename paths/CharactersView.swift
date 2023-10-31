@@ -20,13 +20,13 @@ struct CharactersView: View {
         Text("Charcater")
         List(characters) { character in
             Button(action: {
-                
+           
             }, label: {
                 Text(character.name)
             })
         }
         .onAppear() {
-            loadCharacters(episodeId: 5)
+            loadCharacters(episodeId: coordinator.episodeId)
         }
         
         Button(action: {

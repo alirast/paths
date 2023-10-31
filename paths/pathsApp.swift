@@ -9,7 +9,7 @@ import SwiftUI
 
 class BaseCoordinator: ObservableObject {
     @Published var path = NavigationPath()
-    
+    @Published var episodeId = Int()
     func goToEpisodes() {
         path.append(DestinationFlowPage.episodes)
     }
@@ -24,6 +24,7 @@ class BaseCoordinator: ObservableObject {
     
     func goToCharactersInEpisode(_ episodeId: Int) {
         path.append(DestinationFlowPage.characters)
+        self.episodeId = episodeId
     }
     
     func goToLocation() {
