@@ -44,7 +44,7 @@ class ViewFactory {
     
     static func getCharactersView() -> some View {
         let view = CharactersView(viewModel: CharactersViewModel())
-        return view 
+        return view
     }
     
     static func getLocationView() -> some View {

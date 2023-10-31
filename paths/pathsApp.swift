@@ -22,6 +22,10 @@ class BaseCoordinator: ObservableObject {
         path.append(DestinationFlowPage.characters)
     }
     
+    func goToCharactersInEpisode(_ episodeId: Int) {
+        path.append(DestinationFlowPage.characters)
+    }
+    
     func goToLocation() {
         path.append(DestinationFlowPage.location)
     }
