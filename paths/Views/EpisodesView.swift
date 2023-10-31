@@ -7,11 +7,7 @@
 
 import SwiftUI
 
-struct APIResponse<T: Codable>: Codable {
-    let results: T
-}
-
-class EpisodesViewModel: ObservableObject {
+final class EpisodesViewModel: ObservableObject {
 
 }
 
@@ -26,7 +22,6 @@ struct EpisodesView: View {
         List(episodes) { episode in
             Button(action: {
                 showCharactersForEpisode(episodeId: episode.id)
-                print(episode.id)
             }) {
                 Text(episode.name)
             }
@@ -34,18 +29,9 @@ struct EpisodesView: View {
         .onAppear() {
             loadEpisodes()
         }
-        Button(action: {
-            showCharacters()
-        }, label: {
-            Text("Episodes button")
-        })
     }
     
-    func showCharacters() {
-        coordinator.goToCharacters()
-    }
-    
-    func showCharactersForEpisode(episodeId: Int) {
+    private func showCharactersForEpisode(episodeId: Int) {
         coordinator.goToCharactersInEpisode(episodeId)
     }
     

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class CharactersViewModel: ObservableObject {
+final class CharactersViewModel: ObservableObject {
     
 }
 
@@ -17,27 +17,33 @@ struct CharactersView: View {
     
     @State private var characters: [CharacterModel] = []
     var body: some View {
-        Text("Charcater")
+        Text("Charcater for \(coordinator.episodeId) episode")
         List(characters) { character in
-            Button(action: {
-           
-            }, label: {
-                Text(character.name)
-            })
+            HStack {
+                Button(action: {
+                    showLocationForCharacter(character.location.name)
+                }, label: {
+                    Text(character.name)
+                })
+                Spacer()
+                AsyncImage(url: URL(string: character.image)) { charImage in
+                    if let image = charImage.image {
+                    
+                        image.resizable()
+                            .frame(width: 50, height: 50)
+                    } else {
+                        Image(systemName: "person")
+                    }
+                }
+            }
         }
         .onAppear() {
             loadCharacters(episodeId: coordinator.episodeId)
         }
-        
-        Button(action: {
-            showLocation()
-        }, label: {
-            Text("Location")
-        })
     }
     
-    func showLocation() {
-        coordinator.goToLocation()
+    private func showLocationForCharacter(_ location: String) {
+        coordinator.goToLocationForCharacter(location)
     }
     
     func loadCharacters(episodeId: Int) {
@@ -74,5 +80,3 @@ struct CharactersView: View {
         .resume()
     }
 }
-
-

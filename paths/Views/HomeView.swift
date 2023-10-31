@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject {
     
 }
 
@@ -22,7 +22,7 @@ struct HomeView: View {
         })
     }
     
-    func showEpisodes() {
+    private func showEpisodes() {
         coordinator.goToEpisodes()
     }
 }
