@@ -67,10 +67,7 @@
 		4F81BFAC2AF16D9A000401DF /* paths */ = {
 			isa = PBXGroup;
 			children = (
-				4F81BFD12AF1848A000401DF /* Views */,
-				4F81BFD02AF18479000401DF /* Models */,
-				4F81BFCC2AF18445000401DF /* API */,
-				4F81BFCB2AF18435000401DF /* Navigation */,
+				4FC72D5F2AF420DB0040A0F9 /* Main */,
 				4F81BFB12AF16D9B000401DF /* Assets.xcassets */,
 				4F81BFB32AF16D9B000401DF /* Preview Content */,
 			);
@@ -88,7 +85,6 @@
 		4F81BFCB2AF18435000401DF /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				4F81BFAD2AF16D9A000401DF /* pathsApp.swift */,
 				4F81BFC12AF16F25000401DF /* ViewFactory.swift */,
 				4F81BFC92AF18418000401DF /* Coordinator.swift */,
 			);
@@ -121,6 +117,18 @@
 				4F81BFC32AF170BA000401DF /* HomeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4FC72D5F2AF420DB0040A0F9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4F81BFCC2AF18445000401DF /* API */,
+				4F81BFD02AF18479000401DF /* Models */,
+				4F81BFD12AF1848A000401DF /* Views */,
+				4F81BFCB2AF18435000401DF /* Navigation */,
+				4F81BFAD2AF16D9A000401DF /* pathsApp.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
